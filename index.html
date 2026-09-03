@@ -693,6 +693,7 @@
     .services { grid-template-columns: repeat(2, 1fr); }
     .services .card:last-child { grid-column: 1 / -1; }
     .ba-container { grid-template-columns: repeat(2, 1fr); }
+    .ba-container .ba-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
     .areas-grid { grid-template-columns: repeat(4, 1fr); }
     .why-grid { grid-template-columns: repeat(3, 1fr); }
     footer { padding: 26px 48px; }
@@ -840,6 +841,19 @@
         <div class="ba-body">
           <h3>Driveway Cleaning</h3>
           <p>Years of stains removed in just one session.</p>
+        </div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-images">
+          <span class="ba-label before">Before</span>
+          <img class="ba-img" src="images/before-house.jpg" alt="Dirty house exterior before pressure washing">
+          <div class="ba-divider"></div>
+          <span class="ba-label after">After</span>
+          <img class="ba-img" src="images/after-house.jpg" alt="Clean house exterior after pressure washing by Power Jet Co.">
+        </div>
+        <div class="ba-body">
+          <h3>House Exterior Washing</h3>
+          <p>Mold, mildew, and grime gone. Curb appeal restored.</p>
         </div>
       </div>
     </div>
