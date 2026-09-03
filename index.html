@@ -131,17 +131,7 @@
     border-bottom: 1px solid var(--line);
     animation: rise .6s .05s both;
   }
-  .topbar .logo-text {
-    font-size: 1.1rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    line-height: 1.1;
-    display: flex;
-    flex-direction: column;
-  }
-  .topbar .logo-text .co { font-size: .55rem; color: var(--blue-bright); letter-spacing: .2em; font-style: normal; }
+  .topbar .logo-img { height: 48px; width: auto; border-radius: 8px; }
   .topbar a.phone-mini {
     display: inline-flex;
     align-items: center;
@@ -684,6 +674,7 @@
   /* ================= DESKTOP ================= */
   @media (min-width: 760px) {
     .hero { padding: 24px 48px 36px; }
+    .topbar .logo-img { height: 64px; }
     .hero-body { max-width: 880px; justify-content: center; }
     .cta-group { flex-direction: row; max-width: 660px; }
     .btn-call-main { flex: 2; }
@@ -710,9 +701,7 @@
 
 <header class="hero">
   <div class="topbar">
-    <div class="logo-text">
-      Power Jet<span class="co">Pressure Washing & Exterior Cleaning</span>
-    </div>
+    <img class="logo-img" src="images/logo.jpg" alt="Power Jet Co. Logo">
     <a class="phone-mini" href="tel:+19418991814">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
       (941) 899-1814
