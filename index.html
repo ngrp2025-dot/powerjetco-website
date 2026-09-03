@@ -3,937 +3,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Power Jet Co. — Pressure Washing & Exterior Cleaning</title>
-<meta name="description" content="Power Jet Co. — Professional residential pressure washing in Sarasota, Bradenton, Lakewood Ranch & surrounding areas. House washing, driveway cleaning, and more. Free estimates!">
-<meta name="theme-color" content="#070a12">
-<meta property="og:title" content="Power Jet Co. — Pressure Washing & Exterior Cleaning">
-<meta property="og:description" content="Professional residential pressure washing in Sarasota, Bradenton & Lakewood Ranch. Free estimates — call now!">
-<meta property="og:type" content="website">
+<title>Power Jet Co. | Residential Pressure Washing in Sarasota</title>
+<meta name="description" content="Professional residential pressure washing in Sarasota, Bradenton, and Lakewood Ranch. Driveways, pool decks, house washing, and more. Free estimates!">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #070a12;
-    --ink-2: #0c0f1a;
-    --paper: #ffffff;
-    --blue: #0a6dd6;
-    --blue-bright: #1e90ff;
-    --blue-deep: #062d6e;
-    --accent: #00b4d8;
-    --green: #25d366;
-    --muted: #9fa3bd;
-    --line: rgba(30, 144, 255, .25);
+    --primary: #0a6dd6;       /* Bright Blue from logo */
+    --primary-dark: #062d6e;  /* Navy Blue from logo */
+    --accent: #1e90ff;        /* Light blue highlight */
+    --bg-page: #fbfcf9;       /* Off-white background */
+    --bg-surface: #ffffff;
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+    --radius: 12px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: "Archivo", sans-serif;
-    background: var(--ink);
-    color: var(--paper);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background:
-      radial-gradient(130% 90% at 90% -10%, rgba(10, 109, 214, .18), transparent 55%),
-      radial-gradient(110% 80% at -15% 105%, rgba(10, 109, 214, .12), transparent 50%);
-  }
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    opacity: .3;
-    background-image: radial-gradient(rgba(30,144,255,.12) 1px, transparent 1.5px);
-    background-size: 22px 22px;
-    mask-image: linear-gradient(115deg, black 0%, transparent 38%, transparent 62%, black 100%);
-    -webkit-mask-image: linear-gradient(115deg, black 0%, transparent 38%, transparent 62%, black 100%);
-  }
-
-  main, header, footer { position: relative; z-index: 1; }
+  html { scroll-behavior: smooth; font-family: 'DM Sans', sans-serif; color: var(--text-main); background: var(--bg-page); }
+  
+  h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; font-weight: 800; line-height: 1.1; color: var(--primary-dark); }
+  p { line-height: 1.6; color: var(--text-muted); }
+  a { text-decoration: none; color: var(--primary); font-weight: 600; transition: color 0.2s; }
+  a:hover { color: var(--primary-dark); }
   img { max-width: 100%; display: block; }
-  u { text-underline-offset: 3px; }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  
+  /* --- Buttons --- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.2s ease; border: 2px solid transparent; }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(10, 109, 214, 0.3); }
+  .btn-outline { background: transparent; color: var(--primary-dark); border-color: var(--primary-dark); }
+  .btn-outline:hover { background: var(--primary-dark); color: #fff; }
 
-  /* ---- announcement bar ---- */
-  .announce {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    min-height: 38px;
-    padding: 9px 10px;
-    background: linear-gradient(115deg, var(--blue-deep), var(--blue) 55%, var(--blue-bright));
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    font-size: .63rem;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    line-height: 1.25;
-  }
-  .announce strong {
-    background: #fff;
-    color: var(--blue);
-    padding: 1px 7px;
-    border-radius: 4px;
-    font-weight: 900;
-  }
-  .announce:active { filter: brightness(1.15); }
-
-  /* ================= HERO ================= */
-  .hero {
-    min-height: calc(100svh - 38px);
-    display: flex;
-    flex-direction: column;
-    padding: max(14px, env(safe-area-inset-top)) 20px max(16px, env(safe-area-inset-bottom));
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    background:
-      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23070a12" width="800" height="600"/><circle cx="650" cy="200" r="300" fill="%230a3060" opacity="0.15"/><circle cx="150" cy="450" r="250" fill="%23062d6e" opacity="0.1"/></svg>') center / cover no-repeat;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background:
-      linear-gradient(200deg, rgba(7,10,18,.55) 0%, rgba(7,10,18,.82) 45%, rgba(7,10,18,.96) 78%),
-      linear-gradient(115deg, rgba(6,45,110,.45), transparent 55%);
+  /* --- Navbar --- */
+  .site-nav { background: var(--bg-surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .brand img { height: 50px; width: auto; border-radius: 6px; }
+  
+  .nav-links { display: none; gap: 24px; align-items: center; }
+  .nav-links a { color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  
+  @media (min-width: 900px) {
+    .nav-links { display: flex; }
+    .nav-actions .menu { display: none; }
   }
 
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
-    animation: rise .6s .05s both;
-  }
-  .topbar .logo-img { height: 48px; width: auto; border-radius: 8px; }
-  .topbar a.phone-mini {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--blue-deep);
-    text-decoration: none;
-    font-size: .75rem;
-    font-weight: 800;
-    letter-spacing: .05em;
-    padding: 9px 15px;
-    border-radius: 999px;
-    white-space: nowrap;
-    background: #fff;
-    box-shadow: 0 4px 18px rgba(0,0,0,.4);
-    transition: transform .15s ease;
-  }
-  .topbar a.phone-mini svg { width: 13px; height: 13px; flex: none; }
-  .topbar a.phone-mini:active { transform: scale(.95); }
-
-  .hero-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: clamp(14px, 2.6svh, 26px);
-    padding-top: 12px;
+  /* --- Hero --- */
+  .hero { position: relative; padding: 60px 0; background: linear-gradient(135deg, var(--bg-page) 0%, #eef5fc 100%); overflow: hidden; border-bottom: 1px solid var(--border); }
+  .hero-inner { display: grid; gap: 40px; align-items: center; }
+  .hero-copy { max-width: 600px; position: relative; z-index: 2; }
+  
+  .brand-lockup { display: inline-block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); margin-bottom: 16px; background: rgba(10, 109, 214, 0.1); padding: 6px 12px; border-radius: 99px; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.02em; }
+  .hero-lead { font-size: 1.1rem; margin-bottom: 32px; font-weight: 500; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+  .hero-proof-line { font-size: 0.85rem; font-weight: 600; color: var(--primary-dark); }
+  
+  @media (min-width: 900px) {
+    .hero { padding: 100px 0; }
+    .hero-inner { grid-template-columns: 1fr; }
   }
 
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    width: fit-content;
-    font-size: .66rem;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: .26em;
-    text-transform: uppercase;
-    color: var(--blue-bright);
-    margin-top: auto;
-    animation: rise .6s .15s both;
-  }
-  .badge::before {
-    content: "";
-    width: 26px; height: 8px;
-    background: repeating-linear-gradient(-65deg, var(--blue-bright) 0 5px, transparent 5px 9px);
+  /* --- Shared Section Styles --- */
+  .section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .kicker { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); margin-bottom: 8px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); text-transform: uppercase; }
+
+  /* --- Before/After Interactive Sliders --- */
+  .results-grid { display: grid; gap: 24px; }
+  .ba-wrapper { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); background: #fff; }
+  .ba-info { padding: 16px 20px; border-top: 1px solid var(--border); }
+  .ba-info h3 { font-size: 1.2rem; margin-bottom: 4px; text-transform: uppercase; }
+  .ba-info p { font-size: 0.9rem; margin: 0; }
+  
+  .ba-slider { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #ddd; }
+  .ba-after { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ba-before { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0 50% 0 0); }
+  
+  .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 4px; background: var(--primary); transform: translateX(-50%); pointer-events: none; }
+  .ba-handle::after { content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; background: var(--primary); color: #fff; border-radius: 50%; display: grid; place-items: center; font-weight: bold; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+  
+  .ba-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; margin: 0; }
+  
+  .ba-label { position: absolute; top: 16px; padding: 4px 12px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #fff; border-radius: 4px; z-index: 5; }
+  .ba-label-before { left: 16px; background: rgba(220,38,38,0.85); }
+  .ba-label-after { right: 16px; background: rgba(34,197,94,0.85); }
+
+  @media (min-width: 900px) {
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .results-grid .ba-wrapper:first-child { grid-column: 1 / -1; }
+    .results-grid .ba-wrapper:first-child .ba-slider { aspect-ratio: 21/9; }
   }
 
-  h1 {
-    font-size: clamp(2.8rem, 12vw, 6.5rem);
-    line-height: .9;
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 116%;
-    text-transform: uppercase;
-    letter-spacing: -.015em;
-    animation: rise .6s .25s both;
-    text-shadow: 0 4px 30px rgba(7,10,18,.8);
-  }
-  h1 .blue { color: var(--blue-bright); }
-
-  .tagline {
-    font-size: clamp(.95rem, 3.8vw, 1.15rem);
-    color: #cdd0e4;
-    max-width: 38ch;
-    line-height: 1.45;
-    animation: rise .6s .35s both;
-    text-shadow: 0 2px 12px rgba(7,10,18,.9);
-  }
-  .tagline strong { color: var(--paper); font-weight: 700; }
-
-  .quick {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    border-left: 3px solid var(--blue-bright);
-    padding-left: 14px;
-    animation: rise .6s .45s both;
-  }
-  .quick li {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    font-size: clamp(.9rem, 3.5vw, 1.05rem);
-    text-shadow: 0 2px 10px rgba(7,10,18,.9);
-  }
-  .quick .k {
-    font-size: .6rem;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--blue-bright);
-    min-width: 74px;
-  }
-  .quick a { color: var(--paper); text-decoration: none; font-weight: 700; letter-spacing: .03em; }
-  .quick a:active { color: var(--blue-bright); }
-
-  /* ---- CTA ---- */
-  .cta-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    animation: rise .6s .55s both;
-  }
-
-  .btn-call-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: var(--blue-bright);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 108%;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    font-size: clamp(1rem, 4.2vw, 1.15rem);
-    padding: 17px 22px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(30, 144, 255, .32), inset 0 -3px 0 rgba(0,0,0,.18);
-    transition: transform .15s ease;
-  }
-  .btn-call-main:active { transform: scale(.97); }
-  .btn-call-main svg { width: 24px; height: 24px; flex: none; }
-  .btn-call-main .pulse-wrap { position: relative; display: flex; }
-  .btn-call-main .pulse-wrap::after {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,.35);
-    animation: pulse 2s ease-out infinite;
-  }
-
-  .btn-secondary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: .9rem;
-    letter-spacing: .04em;
-    padding: 13px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: rgba(7,10,18,.5);
-  }
-  .btn-secondary:active { background: rgba(10,109,214,.25); }
-  .btn-secondary span { color: var(--blue-bright); font-weight: 800; }
-
-  .scroll-hint {
-    text-align: center;
-    font-size: .6rem;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 6px;
-    margin-top: auto;
-    animation: rise .6s .7s both;
-  }
-  .scroll-hint::after {
-    content: "↓";
-    display: block;
-    color: var(--blue-bright);
-    font-size: .9rem;
-    animation: bob 1.6s ease-in-out infinite;
-  }
-
-  /* ================= SECTIONS ================= */
-  section { padding: 48px 20px 56px; }
-
-  .sec-head {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-  .sec-head h2 {
-    font-size: clamp(1.5rem, 6vw, 2.4rem);
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 114%;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-  .sec-head .rule { flex: 1; height: 2px; background: linear-gradient(90deg, var(--line), transparent); transform: skewX(-30deg); }
-
-  /* services */
-  .services { display: grid; gap: 14px; }
-
-  .card {
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-    background: linear-gradient(160deg, var(--ink-2), rgba(12,15,26,.5));
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    transition: border-color .3s ease, transform .2s ease;
-  }
-  .card:hover {
-    border-color: rgba(30, 144, 255, .45);
-    transform: translateY(-2px);
-  }
-  .card .icon {
-    flex: none;
-    width: 48px; height: 48px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    background: rgba(10,109,214,.15);
-    border: 1px solid var(--line);
-    font-size: 1.4rem;
-  }
-  .card h3 {
-    font-size: 1.05rem;
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 110%;
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    margin-bottom: 4px;
-  }
-  .card p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
-
-  /* ---- before/after ---- */
-  .ba-container {
-    display: grid;
-    gap: 18px;
-  }
-  .ba-card {
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    overflow: hidden;
-    background: var(--ink-2);
-  }
-  .ba-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-  }
-  .ba-images .ba-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-  .ba-label {
-    position: absolute;
-    top: 10px;
-    padding: 4px 14px;
-    font-size: .6rem;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    border-radius: 6px;
-    z-index: 2;
-  }
-  .ba-label.before { left: 10px; background: rgba(220,38,38,.9); color: #fff; }
-  .ba-label.after { right: 10px; background: rgba(34,197,94,.9); color: #fff; }
-  .ba-divider {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background: var(--blue-bright);
-    transform: translateX(-50%);
-    z-index: 2;
-  }
-  .ba-divider::after {
-    content: "→";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--blue-bright);
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: .8rem;
-    font-weight: 900;
-  }
-  .ba-body {
-    padding: 16px 18px;
-  }
-  .ba-body h3 {
-    font-size: 1rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .ba-body p { font-size: .85rem; color: var(--muted); line-height: 1.4; }
-
-  /* ---- quote ---- */
-  .quote {
-    padding: 72px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(115deg, var(--blue-deep), var(--blue) 60%, var(--blue-bright));
-  }
-  .quote::before, .quote::after {
-    content: "";
-    position: absolute;
-    height: 200%;
-    width: 90px;
-    background: rgba(255,255,255,.08);
-    transform: rotate(25deg);
-    top: -50%;
-  }
-  .quote::before { left: 6%; }
-  .quote::after { right: 10%; width: 46px; background: rgba(7,10,18,.18); }
-  .quote p {
-    position: relative;
-    z-index: 1;
-    font-size: clamp(1.5rem, 6.5vw, 3rem);
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 116%;
-    text-transform: uppercase;
-    line-height: 1.05;
-    max-width: 22ch;
-    margin: 0 auto;
-    text-shadow: 0 4px 24px rgba(7,10,18,.35);
-  }
-  .quote small {
-    position: relative;
-    z-index: 1;
-    display: block;
-    margin-top: 14px;
-    font-size: .62rem;
-    font-weight: 800;
-    letter-spacing: .3em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.75);
-  }
-
-  /* ---- areas ---- */
-  .areas-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .area-chip {
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 16px 14px;
-    background: linear-gradient(160deg, var(--ink-2), rgba(12,15,26,.5));
-    text-align: center;
-    font-weight: 700;
-    font-size: .92rem;
-    transition: border-color .3s ease;
-  }
-  .area-chip:hover { border-color: rgba(30, 144, 255, .5); }
-  .area-chip .pin { display: block; font-size: 1.4rem; margin-bottom: 6px; }
-
-  /* ---- free estimate banner ---- */
-  .estimate-banner {
-    border: 2px solid var(--blue-bright);
-    border-radius: 18px;
-    padding: 28px 22px;
-    background: linear-gradient(160deg, rgba(10,109,214,.12), rgba(6,45,110,.08));
-    text-align: center;
-    margin-top: 20px;
-  }
-  .estimate-banner .tag {
-    display: inline-block;
-    background: linear-gradient(115deg, var(--blue), var(--blue-bright));
-    color: #fff;
-    font-size: .6rem;
-    font-weight: 800;
-    font-style: italic;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 999px;
-    margin-bottom: 12px;
-  }
-  .estimate-banner h3 {
-    font-size: clamp(1.3rem, 5vw, 1.8rem);
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 114%;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .estimate-banner p { color: var(--muted); font-size: .9rem; margin-bottom: 18px; }
-
-  /* ---- why us ---- */
-  .why-grid { display: grid; gap: 14px; }
-  .why-card {
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-    background: linear-gradient(160deg, var(--ink-2), rgba(12,15,26,.5));
-    text-align: center;
-  }
-  .why-card .emoji { font-size: 2rem; margin-bottom: 10px; }
-  .why-card h3 {
-    font-size: .95rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .why-card p { font-size: .85rem; color: var(--muted); line-height: 1.4; }
-
-  /* ---- final CTA ---- */
-  .final {
-    text-align: center;
-    padding: 76px 20px 90px;
-    position: relative;
-    overflow: hidden;
-  }
-  .final .logo-big {
-    font-size: 1.6rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-  .final .logo-big .co { color: var(--blue-bright); font-size: .7rem; display: block; letter-spacing: .25em; font-style: normal; }
-  .final h2 {
-    font-size: clamp(2.1rem, 9.5vw, 4.2rem);
-    font-weight: 900;
-    font-style: italic;
-    font-stretch: 116%;
-    text-transform: uppercase;
-    line-height: .95;
-    margin-bottom: 12px;
-  }
-  .final h2 em { font-style: italic; color: var(--blue-bright); }
-  .final p { color: var(--muted); font-size: .95rem; margin-bottom: 24px; }
-  .final .btn-call-main { max-width: 380px; margin: 0 auto 12px; }
-  .final .btn-secondary { max-width: 380px; margin: 0 auto; }
-
-  /* ---- instagram link ---- */
-  .ig-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--paper);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: .9rem;
-    padding: 12px 22px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    margin-top: 16px;
-    transition: border-color .3s ease;
-  }
-  .ig-link:hover { border-color: var(--blue-bright); }
-  .ig-link svg { width: 18px; height: 18px; }
-
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 22px 20px calc(22px + env(safe-area-inset-bottom));
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    align-items: center;
-    justify-content: space-between;
-    font-size: .74rem;
-    color: var(--muted);
-    letter-spacing: .05em;
-  }
-  footer .f-logo {
-    font-weight: 900;
-    font-style: italic;
-    font-size: .85rem;
-    color: var(--paper);
-    opacity: .85;
-  }
-  footer a { color: var(--paper); text-decoration: none; font-weight: 700; }
-
-  /* ---- FAB ---- */
-  .fab {
-    position: fixed;
-    right: 16px;
-    bottom: max(16px, env(safe-area-inset-bottom));
-    z-index: 50;
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--blue-bright);
-    display: grid;
-    place-items: center;
-    box-shadow: 0 8px 24px rgba(30,144,255,.45);
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
-    transition: opacity .3s, transform .3s;
-    text-decoration: none;
-  }
-  .fab.show { opacity: 1; transform: none; pointer-events: auto; }
-  .fab svg { width: 26px; height: 26px; }
-
-  /* ---- residential badge ---- */
-  .res-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(10, 109, 214, .12);
-    border: 1px solid var(--line);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: .7rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--blue-bright);
-    margin-top: 6px;
-    animation: rise .6s .5s both;
-  }
-  .res-badge svg { width: 14px; height: 14px; flex: none; }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes bob {
-    0%, 100% { translate: 0 0; }
-    50% { translate: 0 5px; }
-  }
-  @keyframes pulse {
-    0% { transform: scale(.7); opacity: .8; }
-    100% { transform: scale(1.5); opacity: 0; }
-  }
-
-  /* ================= DESKTOP ================= */
+  /* --- Core Services --- */
+  .service-grid { display: grid; gap: 24px; grid-template-columns: 1fr; }
+  .service-tile { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+  .service-tile:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: var(--primary); }
+  .service-tile-copy { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+  .service-tile-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .service-tile h3 { font-size: 1.4rem; margin-bottom: 8px; text-transform: uppercase; }
+  .service-tile p { font-size: 0.95rem; margin-bottom: 0; }
+  
   @media (min-width: 760px) {
-    .hero { padding: 24px 48px 36px; }
-    .topbar .logo-img { height: 64px; }
-    .hero-body { max-width: 880px; justify-content: center; }
-    .cta-group { flex-direction: row; max-width: 660px; }
-    .btn-call-main { flex: 2; }
-    .btn-secondary { flex: 1.2; }
-    section { max-width: 1000px; margin: 0 auto; }
-    .final { max-width: 1000px; margin: 0 auto; }
-    .services { grid-template-columns: repeat(2, 1fr); }
-    .services .card:last-child { grid-column: 1 / -1; }
-    .ba-container { grid-template-columns: repeat(2, 1fr); }
-    .ba-container .ba-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
-    .areas-grid { grid-template-columns: repeat(4, 1fr); }
-    .why-grid { grid-template-columns: repeat(3, 1fr); }
-    footer { padding: 26px 48px; }
+    .service-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation: none !important; transition: none !important; }
+  /* --- Reviews Section --- */
+  .reviews { background: var(--primary-dark); color: #fff; }
+  .reviews .kicker { color: var(--accent); }
+  .reviews h2 { color: #fff; }
+  .reviews-grid { display: grid; gap: 24px; }
+  .review-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 32px; border-radius: var(--radius); }
+  .stars { color: #fbbf24; font-size: 1.2rem; margin-bottom: 16px; letter-spacing: 2px; }
+  .review-card p { color: #e2e8f0; font-size: 1.05rem; font-style: italic; margin-bottom: 24px; }
+  .review-by strong { display: block; color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; text-transform: uppercase; }
+  .review-by span { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+  
+  @media (min-width: 760px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* --- Final CTA --- */
+  .final-cta { text-align: center; padding: 100px 24px; background: linear-gradient(135deg, #eef5fc 0%, var(--bg-surface) 100%); border-top: 1px solid var(--border); }
+  .final-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; margin-bottom: 16px; }
+  .final-cta p { font-size: 1.1rem; margin-bottom: 32px; }
+  .final-cta .hero-actions { justify-content: center; margin: 0; }
+
+  /* --- Footer --- */
+  footer { background: #111827; color: #94a3b8; padding: 60px 0 30px; }
+  .footer-grid { display: grid; gap: 40px; grid-template-columns: 1fr; margin-bottom: 60px; }
+  .footer-brand h4 { color: #fff; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-brand p { font-size: 0.9rem; margin-bottom: 16px; max-width: 300px; }
+  .footer-links h4 { color: #fff; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 20px; }
+  .footer-links a { display: block; color: #94a3b8; font-weight: 500; margin-bottom: 12px; font-size: 0.95rem; }
+  .footer-links a:hover { color: var(--accent); }
+  
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; font-size: 0.85rem; flex-wrap: wrap; gap: 16px; }
+  
+  @media (min-width: 760px) {
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
-<a class="announce" href="tel:+19418991814">💧 Free estimates — <strong>Call now</strong> for a cleaner home</a>
-
-<header class="hero">
-  <div class="topbar">
-    <img class="logo-img" src="images/logo.jpg" alt="Power Jet Co. Logo">
-    <a class="phone-mini" href="tel:+19418991814">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-      (941) 899-1814
-    </a>
-  </div>
-
-  <div class="hero-body">
-    <span class="badge">Gustavo Montes</span>
-
-    <h1>Power<br><span class="blue">Jet Co.</span></h1>
-
-    <p class="tagline"><strong>The difference is clear.</strong> Professional residential pressure washing that makes your home look brand new.</p>
-
-    <ul class="quick">
-      <li><span class="k">Phone</span> <a href="tel:+19418991814">(941) 899-1814</a></li>
-      <li><span class="k">Phone 2</span> <a href="tel:+19412507764">(941) 250-7764</a></li>
-      <li><span class="k">Areas</span> <strong>Sarasota</strong>, Bradenton, Lakewood Ranch</li>
-    </ul>
-
-    <div class="res-badge">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
-      Residential Services Only
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#"><img src="images/logo.jpg" alt="Power Jet Co."></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#results">Before & After</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:+19418991814" style="color:var(--primary); font-weight:800;">(941) 899-1814</a>
     </div>
-
-    <div class="cta-group">
-      <a class="btn-call-main" href="tel:+19418991814">
-        <span class="pulse-wrap">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-        </span>
-        Call for Free Estimate
-      </a>
-      <a class="btn-secondary" href="tel:+19412507764">Call <span>(941) 250-7764</span></a>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="tel:+19418991814">Free Quote</a>
     </div>
-
-    <p class="scroll-hint">Learn more</p>
   </div>
-</header>
+</nav>
 
 <main>
-  <section id="services">
-    <div class="sec-head">
-      <h2>Our Services</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="services">
-      <div class="card">
-        <div class="icon">🏠</div>
-        <div>
-          <h3>House Washing</h3>
-          <p>Remove dirt, mold, mildew, and grime from your home's exterior. Restore your siding, stucco, and vinyl to like-new condition.</p>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="brand-lockup">Residential Services Only</p>
+        <h1>Keep your entire home looking brand new.</h1>
+        <p class="hero-lead">Professional residential pressure washing in Sarasota, Bradenton, and Lakewood Ranch. We make the difference clear.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:+19418991814">Call for Free Estimate</a>
+          <a class="btn btn-outline" href="#results">View Our Work</a>
         </div>
-      </div>
-      <div class="card">
-        <div class="icon">🚗</div>
-        <div>
-          <h3>Driveway Cleaning</h3>
-          <p>Blast away oil stains, tire marks, and built-up grime. Your driveway will look freshly poured.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🚶</div>
-        <div>
-          <h3>Sidewalk Cleaning</h3>
-          <p>Restore your walkways and sidewalks to a clean, safe, and inviting appearance for your family and guests.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🏊</div>
-        <div>
-          <h3>Patio & Pool Deck Cleaning</h3>
-          <p>Eliminate slippery algae and stains from your pool deck and patio areas. Safe surfaces for everyone.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="icon">🏡</div>
-        <div>
-          <h3>Fence Cleaning</h3>
-          <p>Bring your wood, vinyl, or metal fences back to life. Remove years of weathering and discoloration.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="estimate-banner">
-      <div class="tag">✓ Always</div>
-      <h3>Free Estimates</h3>
-      <p>No obligation, no hidden fees. Call us and we'll give you an honest, upfront quote.</p>
-      <a class="btn-call-main" href="tel:+19418991814" style="max-width:340px; margin:0 auto; font-size:.95rem;">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:20px;height:20px;flex:none;"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-        Get Your Free Quote
-      </a>
-    </div>
-  </section>
-
-  <div class="quote">
-    <p>The difference is clear</p>
-    <small>— Power Jet Co.</small>
-  </div>
-
-  <section id="results">
-    <div class="sec-head">
-      <h2>Before & After</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="ba-container">
-      <div class="ba-card">
-        <div class="ba-images">
-          <span class="ba-label before">Before</span>
-          <img class="ba-img" src="images/before-pool.jpg" alt="Dirty pool deck before pressure washing">
-          <div class="ba-divider"></div>
-          <span class="ba-label after">After</span>
-          <img class="ba-img" src="images/after-pool.jpg" alt="Clean pool deck after pressure washing by Power Jet Co.">
-        </div>
-        <div class="ba-body">
-          <h3>Pool Deck Transformation</h3>
-          <p>Stains and grime completely removed — like new again.</p>
-        </div>
-      </div>
-      <div class="ba-card">
-        <div class="ba-images">
-          <span class="ba-label before">Before</span>
-          <img class="ba-img" src="images/before-driveway.jpg" alt="Dirty driveway before pressure washing">
-          <div class="ba-divider"></div>
-          <span class="ba-label after">After</span>
-          <img class="ba-img" src="images/after-driveway.jpg" alt="Clean driveway after pressure washing by Power Jet Co.">
-        </div>
-        <div class="ba-body">
-          <h3>Driveway Cleaning</h3>
-          <p>Years of stains removed in just one session.</p>
-        </div>
-      </div>
-      <div class="ba-card">
-        <div class="ba-images">
-          <span class="ba-label before">Before</span>
-          <img class="ba-img" src="images/before-house.jpg" alt="Dirty house exterior before pressure washing">
-          <div class="ba-divider"></div>
-          <span class="ba-label after">After</span>
-          <img class="ba-img" src="images/after-house.jpg" alt="Clean house exterior after pressure washing by Power Jet Co.">
-        </div>
-        <div class="ba-body">
-          <h3>House Exterior Washing</h3>
-          <p>Mold, mildew, and grime gone. Curb appeal restored.</p>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section id="areas">
-    <div class="sec-head">
-      <h2>Service Areas</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="areas-grid">
-      <div class="area-chip">
-        <span class="pin">📍</span>
-        Sarasota
-      </div>
-      <div class="area-chip">
-        <span class="pin">📍</span>
-        Bradenton
-      </div>
-      <div class="area-chip">
-        <span class="pin">📍</span>
-        Lakewood Ranch
-      </div>
-      <div class="area-chip">
-        <span class="pin">📍</span>
-        Surrounding Areas
+        <p class="hero-proof-line">Gustavo Montes · (941) 899-1814</p>
       </div>
     </div>
   </section>
 
-  <section id="why">
-    <div class="sec-head">
-      <h2>Why Power Jet?</h2>
-      <span class="rule"></span>
+  <section id="results" class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Real Results</p>
+        <h2>Finished surfaces from jobs we actually completed.</h2>
+      </div>
+      
+      <div class="results-grid">
+        <!-- Big Slider -->
+        <div class="ba-wrapper">
+          <div class="ba-slider" data-start="50">
+            <img class="ba-after" src="images/after-house.jpg" alt="House after washing" loading="lazy">
+            <img class="ba-before" src="images/before-house.jpg" alt="House before washing" loading="lazy">
+            <div class="ba-handle"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare house before and after">
+          </div>
+          <div class="ba-info">
+            <h3>House Exterior Washing</h3>
+            <p>Mold, mildew, and grime completely removed. Curb appeal restored.</p>
+          </div>
+        </div>
+        
+        <!-- Small Slider 1 -->
+        <div class="ba-wrapper">
+          <div class="ba-slider" data-start="50">
+            <img class="ba-after" src="images/after-driveway.jpg" alt="Driveway after washing" loading="lazy">
+            <img class="ba-before" src="images/before-driveway.jpg" alt="Driveway before washing" loading="lazy">
+            <div class="ba-handle"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare driveway before and after">
+          </div>
+          <div class="ba-info">
+            <h3>Driveway Cleaning</h3>
+            <p>Years of stains removed in just one session.</p>
+          </div>
+        </div>
+        
+        <!-- Small Slider 2 -->
+        <div class="ba-wrapper">
+          <div class="ba-slider" data-start="50">
+            <img class="ba-after" src="images/after-pool.jpg" alt="Pool deck after washing" loading="lazy">
+            <img class="ba-before" src="images/before-pool.jpg" alt="Pool deck before washing" loading="lazy">
+            <div class="ba-handle"></div>
+            <span class="ba-label ba-label-before">Before</span>
+            <span class="ba-label ba-label-after">After</span>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare pool deck before and after">
+          </div>
+          <div class="ba-info">
+            <h3>Pool Deck Transformation</h3>
+            <p>Stains and algae completely removed — safe and like new again.</p>
+          </div>
+        </div>
+      </div>
+      
     </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="emoji">💰</div>
-        <h3>Free Estimates</h3>
-        <p>No surprise fees. We quote before we start so you know exactly what to expect.</p>
+  </section>
+
+  <section id="services" class="section" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Core Services</p>
+        <h2>One company for the exterior.</h2>
       </div>
-      <div class="why-card">
-        <div class="emoji">🏠</div>
-        <h3>Residential Focused</h3>
-        <p>We specialize in homes, giving your property the dedicated attention it deserves.</p>
-      </div>
-      <div class="why-card">
-        <div class="emoji">✨</div>
-        <h3>Visible Results</h3>
-        <p>The difference is clear — we don't stop until your surfaces look brand new.</p>
+      
+      <div class="service-grid">
+        <div class="service-tile">
+          <div class="service-tile-copy">
+            <div class="service-tile-icon">🏠</div>
+            <h3>House Washing</h3>
+            <p>Remove dirt, mold, mildew, and grime from your home's exterior. We safely restore your siding, stucco, and brick to like-new condition.</p>
+          </div>
+        </div>
+        <div class="service-tile">
+          <div class="service-tile-copy">
+            <div class="service-tile-icon">🚗</div>
+            <h3>Driveway & Sidewalks</h3>
+            <p>Blast away oil stains, tire marks, and built-up grime. Boost your property's curb appeal with concrete that looks freshly poured.</p>
+          </div>
+        </div>
+        <div class="service-tile">
+          <div class="service-tile-copy">
+            <div class="service-tile-icon">🏊</div>
+            <h3>Patio & Pool Decks</h3>
+            <p>Eliminate slippery algae and stubborn stains from your pool deck and outdoor living areas. Making your surfaces safe and inviting.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="final">
-    <div class="logo-big">Power Jet Co.<span class="co">Pressure Washing & Exterior Cleaning</span></div>
-    <h2>Ready for a <em>cleaner home?</em></h2>
-    <p>Call Gustavo today and get your free, no-obligation estimate.</p>
-    <a class="btn-call-main" href="tel:+19418991814">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:22px;height:22px;flex:none;"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-      Call (941) 899-1814
-    </a>
-    <a class="btn-secondary" href="tel:+19412507764" style="max-width:380px; margin:12px auto 0;">
-      Or call <span>(941) 250-7764</span>
-    </a>
-    <a class="ig-link" href="https://www.instagram.com/powerjet.co" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
-      @powerjet.co
-    </a>
-  </div>
+  <section id="reviews" class="section reviews">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">Why Choose Us</p>
+        <h2>Five-star service from start to finish.</h2>
+      </div>
+      
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“Gustavo was professional, on time, and paid attention to every detail. He made my driveway and exterior look completely brand new.”</p>
+          <div class="review-by"><strong>Customer</strong><span>Sarasota, FL</span></div>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“Amazing job bringing my property back to life! Honest, respectful, and fair priced. I completely trust him recleaning my home next time.”</p>
+          <div class="review-by"><strong>Customer</strong><span>Bradenton, FL</span></div>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“We recently had our pool deck cleaned by Power Jet Co. and were incredibly happy with the results. Great communication and visible results.”</p>
+          <div class="review-by"><strong>Customer</strong><span>Lakewood Ranch, FL</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>The Difference Is Clear.</h2>
+      <p>Residential Pressure Washing · Sarasota · Bradenton · Lakewood Ranch</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+19418991814">Get a Free Quote</a>
+        <a class="btn btn-outline" href="https://www.instagram.com/powerjet.co" target="_blank">Follow @powerjet.co</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <span class="f-logo">Power Jet Co.</span>
-  <span>© 2026 Power Jet Co. All rights reserved.</span>
-  <span>Proudly serving <a href="#areas">Sarasota & beyond</a></span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Power Jet Co.</h4>
+        <p>Professional residential pressure washing and exterior cleaning.</p>
+        <p style="color: var(--accent); font-weight: 600;">Sarasota · Bradenton · Lakewood Ranch</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="#services">House Washing</a>
+        <a href="#services">Driveway Cleaning</a>
+        <a href="#services">Sidewalk Cleaning</a>
+        <a href="#services">Patio & Pool Deck</a>
+        <a href="#services">Fence Cleaning</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+19418991814">(941) 899-1814</a>
+        <a href="tel:+19412507764">(941) 250-7764</a>
+        <a href="https://www.instagram.com/powerjet.co" target="_blank">Instagram @powerjet.co</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Power Jet Co. All rights reserved.</span>
+      <span>Gustavo Montes | Residential Services Only</span>
+    </div>
+  </div>
 </footer>
 
-<a class="fab" href="tel:+19418991814" id="fab" aria-label="Call us">
-  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
-</a>
-
 <script>
-  // FAB visibility
-  const fab = document.getElementById('fab');
-  const observer = new IntersectionObserver(([e]) => {
-    fab.classList.toggle('show', !e.isIntersecting);
-  }, { threshold: 0 });
-  observer.observe(document.querySelector('.cta-group'));
-</script>
+  // Interactive Before/After Sliders
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    const range = slider.querySelector('.ba-range');
+    const beforeImg = slider.querySelector('.ba-before');
+    const handle = slider.querySelector('.ba-handle');
 
+    const updateSlider = (val) => {
+      beforeImg.style.clipPath = `inset(0 ${100 - val}% 0 0)`;
+      handle.style.left = `${val}%`;
+    };
+
+    range.addEventListener('input', (e) => {
+      updateSlider(e.target.value);
+    });
+    
+    // Initialize
+    updateSlider(range.value);
+  });
+</script>
 </body>
 </html>
